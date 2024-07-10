@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: rgba(0, 0, 0, 1);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+@keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
+  }
+  
+  .meteor {
+    @apply animate-meteor-effect;
+  }
+  
+  @layer utilities {
+    .animate-meteor-effect {
+      animation: meteor 5s linear infinite;
+    }
+  }
