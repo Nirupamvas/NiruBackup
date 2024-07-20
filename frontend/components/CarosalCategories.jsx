@@ -1,0 +1,95 @@
+import React from 'react'
+import Carousel from 'react-multi-carousel';
+import "react-multi-carousel/lib/styles.css"
+import FeaturedCategories from './FeaturedCategories';
+import SingleFeaturedCat from './SingleFeaturedCat';
+const CategorieData = [
+    {
+      id: 1,
+      catName: "Blouse",
+      imgUrl:
+        "https://img.freepik.com/premium-photo/painting-indian-woman-generative-ai_849906-20879.jpg",
+      status: "",
+    },
+    {
+      id: 2,
+      catName: "Kurthi",
+      imgUrl:
+        "https://images.nightcafe.studio/jobs/7TDT7vxotb342heKrd2J/7TDT7vxotb342heKrd2J--1--21epe.jpg?tr=w-1600,c-at_max",
+      status: "",
+    },
+    {
+      id: 3,
+      catName: "Salwar",
+      imgUrl:
+        "https://img.freepik.com/premium-photo/portrait-indian-woman-beautiful-traditional-dress-ai-generated-art_272168-11686.jpg",
+      status: "",
+    },
+    {
+      id: 4,
+      catName: "Lehanga",
+      imgUrl:
+        "https://static.vecteezy.com/system/resources/previews/030/565/093/large_2x/ai-generative-pretty-indian-young-girl-dress-up-saree-free-photo.jpg",
+      status: "",
+    },
+    {
+      id: 5,
+      catName: "Dress",
+      imgUrl:
+        "https://i.pinimg.com/736x/ea/16/ec/ea16ec9cff268876a8ea6c50ee0c9426.jpg",
+      status: "",
+    },
+    {
+      id: 6,
+      catName: "ReadyToWear",
+      imgUrl:
+        "https://i.pinimg.com/736x/5a/ee/2d/5aee2da792c7f8e224696962007e1733.jpg",
+      status: "",
+    },
+    {
+        id: 7,
+        catName: "Blouse",
+        imgUrl:
+          "https://img.freepik.com/premium-photo/painting-indian-woman-generative-ai_849906-20879.jpg",
+        status: "",
+      },
+      {
+        id: 8,
+        catName: "Kurthi",
+        imgUrl:
+          "https://images.nightcafe.studio/jobs/7TDT7vxotb342heKrd2J/7TDT7vxotb342heKrd2J--1--21epe.jpg?tr=w-1600,c-at_max",
+        status: "",
+      },
+
+  ];
+const CarosalCategories = () => {
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 4
+          },
+          tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 3
+          },
+          mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+          }
+    };
+  return (
+    <div className="mt-[50px] md:mt-[100px] mb-[100px] md:mb-0 ">
+    <div className="text-2xl font-bold mb-5">You Might Also Like</div>
+    <Carousel responsive={responsive} containerClass="-mx-[10px]" itemClass="px-[10px]">
+    {CategorieData.map((item)=>{
+          const a = 10;
+          console.log(item);
+          <SingleFeaturedCat key={item.id} CategorieData={item} />
+    })}
+        {/* <SingleFeaturedCat CategorieData = {CategorieData}/> */}
+    </Carousel>
+</div>
+  )
+}
+
+export default CarosalCategories
